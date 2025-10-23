@@ -56,6 +56,11 @@ paths:
             type: string
             enum: [low, medium, high]
           description: Filtrar por prioridad
+        - in: query
+          name: search
+          schema:
+            type: string
+          description: Buscar texto en el título de la tarea
       responses:
         '200':
           description: Lista paginada de tareas
