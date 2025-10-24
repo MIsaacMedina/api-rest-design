@@ -10,6 +10,8 @@ info:
     name: MIT
     url: https://opensource.org/licenses/MIT
 servers:
+  - url: https://special-space-enigma-x5rq5r56q5p7cpqx4-3000.app.github.dev/v1
+    description: Servidor local de en codespace
   - url: http://localhost:3000/v1
     description: Servidor local de desarrollo
   - url: https://staging.api.taskmanager.dev/v1
