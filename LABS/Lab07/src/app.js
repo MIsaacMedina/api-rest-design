@@ -1,11 +1,14 @@
 import express from "express";
+import cors from 'cors';
 import swaggerUi from "swagger-ui-express";
 import YAML from "yamljs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { logger, notFound, errorHandler } from "./middlewares/basic.js";
+import taskRoutes from "./routes/taskRoutes.js";
 
 const app = express();
+app.use(cors()); 
 app.use(express.json()); // Habilitar JSON
 app.use(logger);
 
@@ -34,6 +37,8 @@ app.get("/v1/health", (req, res) => {
 app.get("/v1/welcome", (req, res) => {
   res.json({ message: "Welcome to Task Manager API" });
 });
+
+app.use("/v1/tasks", taskRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
